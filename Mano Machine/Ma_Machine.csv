@@ -1,0 +1,60 @@
+# Copyright (C) 1991-2013 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+
+# Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
+# File: C:\Users\NSB\Documents\U\project\Final Files (Synthesis)\Mano Machine\Ma_Machine.csv
+# Generated on: Tue Oct 15 20:17:05 2024
+
+# Note: The column header names should not be changed if you wish to import this .csv file into the Quartus II software.
+
+To,Direction,Location,I/O Bank,VREF Group,Fitter Location,I/O Standard,Reserved,Current Strength,Slew Rate,Differential Pair,Transceiver Analog Settings Protocol,VCCR_GXB/VCCT_GXB Voltage,Transceiver I/O Pin Termination,Transceiver Dedicated Refclk Pin Termination,Transmitter Common Mode Driver Voltage,Transmitter Slew Rate Control,Transmitter Differential Output Voltage,Receiver Buffer Common Mode Voltage
+clk,Input,PIN_AF14,3B,B3B_N0,PIN_AF14,,,,,,,,,,,,,
+dig1[6],Output,PIN_AH28,5A,B5A_N0,PIN_AH28,,,,,,,,,,,,,
+dig1[5],Output,PIN_AG28,5A,B5A_N0,PIN_AG28,,,,,,,,,,,,,
+dig1[4],Output,PIN_AF28,5A,B5A_N0,PIN_AF28,,,,,,,,,,,,,
+dig1[3],Output,PIN_AG27,5A,B5A_N0,PIN_AG27,,,,,,,,,,,,,
+dig1[2],Output,PIN_AE28,5A,B5A_N0,PIN_AE28,,,,,,,,,,,,,
+dig1[1],Output,PIN_AE27,5A,B5A_N0,PIN_AE27,,,,,,,,,,,,,
+dig1[0],Output,PIN_AE26,5A,B5A_N0,PIN_AE26,,,,,,,,,,,,,
+dig2[6],Output,PIN_AD27,5A,B5A_N0,PIN_AD27,,,,,,,,,,,,,
+dig2[5],Output,PIN_AF30,5A,B5A_N0,PIN_AF30,,,,,,,,,,,,,
+dig2[4],Output,PIN_AF29,5A,B5A_N0,PIN_AF29,,,,,,,,,,,,,
+dig2[3],Output,PIN_AG30,5A,B5A_N0,PIN_AG30,,,,,,,,,,,,,
+dig2[2],Output,PIN_AH30,5A,B5A_N0,PIN_AH30,,,,,,,,,,,,,
+dig2[1],Output,PIN_AH29,5A,B5A_N0,PIN_AH29,,,,,,,,,,,,,
+dig2[0],Output,PIN_AJ29,5A,B5A_N0,PIN_AJ29,,,,,,,,,,,,,
+dig3[6],Output,PIN_AC30,5B,B5B_N0,PIN_AC30,,,,,,,,,,,,,
+dig3[5],Output,PIN_AC29,5B,B5B_N0,PIN_AC29,,,,,,,,,,,,,
+dig3[4],Output,PIN_AD30,5B,B5B_N0,PIN_AD30,,,,,,,,,,,,,
+dig3[3],Output,PIN_AC28,5B,B5B_N0,PIN_AC28,,,,,,,,,,,,,
+dig3[2],Output,PIN_AD29,5B,B5B_N0,PIN_AD29,,,,,,,,,,,,,
+dig3[1],Output,PIN_AE29,5B,B5B_N0,PIN_AE29,,,,,,,,,,,,,
+dig3[0],Output,PIN_AB23,5A,B5A_N0,PIN_AB23,,,,,,,,,,,,,
+Inuser[7],Input,PIN_AC9,3A,B3A_N0,PIN_AC9,,,,,,,,,,,,,
+Inuser[6],Input,PIN_AE11,3A,B3A_N0,PIN_AE11,,,,,,,,,,,,,
+Inuser[5],Input,PIN_AD12,3A,B3A_N0,PIN_AD12,,,,,,,,,,,,,
+Inuser[4],Input,PIN_AD11,3A,B3A_N0,PIN_AD11,,,,,,,,,,,,,
+Inuser[3],Input,PIN_AF10,3A,B3A_N0,PIN_AF10,,,,,,,,,,,,,
+Inuser[2],Input,PIN_AF9,3A,B3A_N0,PIN_AF9,,,,,,,,,,,,,
+Inuser[1],Input,PIN_AC12,3A,B3A_N0,PIN_AC12,,,,,,,,,,,,,
+Inuser[0],Input,PIN_AB12,3A,B3A_N0,PIN_AB12,,,,,,,,,,,,,
+Output[7],Output,PIN_W20,5A,B5A_N0,PIN_W20,,,,,,,,,,,,,
+Output[6],Output,PIN_Y19,4A,B4A_N0,PIN_Y19,,,,,,,,,,,,,
+Output[5],Output,PIN_W19,4A,B4A_N0,PIN_W19,,,,,,,,,,,,,
+Output[4],Output,PIN_W17,4A,B4A_N0,PIN_W17,,,,,,,,,,,,,
+Output[3],Output,PIN_V18,4A,B4A_N0,PIN_V18,,,,,,,,,,,,,
+Output[2],Output,PIN_V17,4A,B4A_N0,PIN_V17,,,,,,,,,,,,,
+Output[1],Output,PIN_W16,4A,B4A_N0,PIN_W16,,,,,,,,,,,,,
+Output[0],Output,PIN_V16,4A,B4A_N0,PIN_V16,,,,,,,,,,,,,
+St,Input,PIN_AE12,3A,B3A_N0,PIN_AE12,,,,,,,,,,,,,

@@ -1,0 +1,1202 @@
+Analysis & Synthesis report for Ma_Machine
+Wed Oct 16 13:17:32 2024
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Registers Added for RAM Pass-Through Logic
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Source assignments for Mano_Machine:MM1|Memory_4096:R1|altsyncram:data_rtl_0|altsyncram_8gs1:auto_generated
+ 14. Parameter Settings for Inferred Entity Instance: Mano_Machine:MM1|Memory_4096:R1|altsyncram:data_rtl_0
+ 15. Parameter Settings for Inferred Entity Instance: CONVERTER:CC2|lpm_divide:Mod0
+ 16. Parameter Settings for Inferred Entity Instance: CONVERTER:CC2|lpm_divide:Div0
+ 17. Parameter Settings for Inferred Entity Instance: CONVERTER:CC2|lpm_divide:Mod1
+ 18. Parameter Settings for Inferred Entity Instance: CONVERTER:CC2|lpm_divide:Div1
+ 19. Parameter Settings for Inferred Entity Instance: CONVERTER:CC2|lpm_divide:Mod2
+ 20. altsyncram Parameter Settings by Entity Instance
+ 21. Port Connectivity Checks: "Mano_Machine:MM1|TR_16:R7"
+ 22. Port Connectivity Checks: "Mano_Machine:MM1|DR_16:R4"
+ 23. Port Connectivity Checks: "Mano_Machine:MM1|CU_16:CC1"
+ 24. Port Connectivity Checks: "Mano_Machine:MM1|Decoder4:QQ1"
+ 25. Port Connectivity Checks: "Disp_CA:CCD"
+ 26. Port Connectivity Checks: "CONVERTER:CC2"
+ 27. Port Connectivity Checks: "Clock_controll_50MHZ_T_50HZ:CC1"
+ 28. Elapsed Time Per Partition
+ 29. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Wed Oct 16 13:17:32 2024       ;
+; Quartus II 64-Bit Version       ; 13.1.0 Build 162 10/23/2013 SJ Full Version ;
+; Revision Name                   ; Ma_Machine                                  ;
+; Top-level Entity Name           ; Mano_Machine_F                              ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 0                                           ;
+; Total pins                      ; 39                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI TX Channels          ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; Mano_Machine_F     ; Ma_Machine         ;
+; Family name                                                                     ; Cyclone V          ; Cyclone IV GX      ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                       ; Off                ; Off                ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; PowerPlay Power Optimization                                                    ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Synthesis Seed                                                                  ; 1                  ; 1                  ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-8         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                      ;
++-------------------------------------------------+-----------------+-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                                                          ; Library ;
++-------------------------------------------------+-----------------+-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+---------+
+; Memory.vhd                                      ; yes             ; User VHDL File                                        ; C:/Users/NSB/Documents/U/project/Final Files (Synthesis)/Mano Machine/Memory.vhd                                      ;         ;
+; AR.vhd                                          ; yes             ; User VHDL File                                        ; C:/Users/NSB/Documents/U/project/Final Files (Synthesis)/Mano Machine/AR.vhd                                          ;         ;
+; PC.vhd                                          ; yes             ; User VHDL File                                        ; C:/Users/NSB/Documents/U/project/Final Files (Synthesis)/Mano Machine/PC.vhd                                          ;         ;
+; DR.vhd                                          ; yes             ; User VHDL File                                        ; C:/Users/NSB/Documents/U/project/Final Files (Synthesis)/Mano Machine/DR.vhd                                          ;         ;
+; AC.vhd                                          ; yes             ; User VHDL File                                        ; C:/Users/NSB/Documents/U/project/Final Files (Synthesis)/Mano Machine/AC.vhd                                          ;         ;
+; IR.vhd                                          ; yes             ; User VHDL File                                        ; C:/Users/NSB/Documents/U/project/Final Files (Synthesis)/Mano Machine/IR.vhd                                          ;         ;
+; TR.vhd                                          ; yes             ; User VHDL File                                        ; C:/Users/NSB/Documents/U/project/Final Files (Synthesis)/Mano Machine/TR.vhd                                          ;         ;
+; INPR.vhd                                        ; yes             ; User VHDL File                                        ; C:/Users/NSB/Documents/U/project/Final Files (Synthesis)/Mano Machine/INPR.vhd                                        ;         ;
+; OUTR.vhd                                        ; yes             ; User VHDL File                                        ; C:/Users/NSB/Documents/U/project/Final Files (Synthesis)/Mano Machine/OUTR.vhd                                        ;         ;
+; SC.vhd                                          ; yes             ; User VHDL File                                        ; C:/Users/NSB/Documents/U/project/Final Files (Synthesis)/Mano Machine/SC.vhd                                          ;         ;
+; ALU.vhd                                         ; yes             ; User VHDL File                                        ; C:/Users/NSB/Documents/U/project/Final Files (Synthesis)/Mano Machine/ALU.vhd                                         ;         ;
+; E.vhd                                           ; yes             ; User VHDL File                                        ; C:/Users/NSB/Documents/U/project/Final Files (Synthesis)/Mano Machine/E.vhd                                           ;         ;
+; FGI.vhd                                         ; yes             ; User VHDL File                                        ; C:/Users/NSB/Documents/U/project/Final Files (Synthesis)/Mano Machine/FGI.vhd                                         ;         ;
+; FGO.vhd                                         ; yes             ; User VHDL File                                        ; C:/Users/NSB/Documents/U/project/Final Files (Synthesis)/Mano Machine/FGO.vhd                                         ;         ;
+; IEN.vhd                                         ; yes             ; User VHDL File                                        ; C:/Users/NSB/Documents/U/project/Final Files (Synthesis)/Mano Machine/IEN.vhd                                         ;         ;
+; R.vhd                                           ; yes             ; User VHDL File                                        ; C:/Users/NSB/Documents/U/project/Final Files (Synthesis)/Mano Machine/R.vhd                                           ;         ;
+; S.vhd                                           ; yes             ; User VHDL File                                        ; C:/Users/NSB/Documents/U/project/Final Files (Synthesis)/Mano Machine/S.vhd                                           ;         ;
+; Decoder4.vhd                                    ; yes             ; User VHDL File                                        ; C:/Users/NSB/Documents/U/project/Final Files (Synthesis)/Mano Machine/Decoder4.vhd                                    ;         ;
+; Decoder3.vhd                                    ; yes             ; User VHDL File                                        ; C:/Users/NSB/Documents/U/project/Final Files (Synthesis)/Mano Machine/Decoder3.vhd                                    ;         ;
+; CU.vhd                                          ; yes             ; User VHDL File                                        ; C:/Users/NSB/Documents/U/project/Final Files (Synthesis)/Mano Machine/CU.vhd                                          ;         ;
+; BUS.vhd                                         ; yes             ; User VHDL File                                        ; C:/Users/NSB/Documents/U/project/Final Files (Synthesis)/Mano Machine/BUS.vhd                                         ;         ;
+; Converter.vhd                                   ; yes             ; User VHDL File                                        ; C:/Users/NSB/Documents/U/project/Final Files (Synthesis)/Mano Machine/Converter.vhd                                   ;         ;
+; Clock_Controll.vhd                              ; yes             ; User VHDL File                                        ; C:/Users/NSB/Documents/U/project/Final Files (Synthesis)/Mano Machine/Clock_Controll.vhd                              ;         ;
+; Mano_Machine.vhd                                ; yes             ; User VHDL File                                        ; C:/Users/NSB/Documents/U/project/Final Files (Synthesis)/Mano Machine/Mano_Machine.vhd                                ;         ;
+; Disp.vhd                                        ; yes             ; User VHDL File                                        ; C:/Users/NSB/Documents/U/project/Final Files (Synthesis)/Mano Machine/Disp.vhd                                        ;         ;
+; Mano_Machine_Full.vhd                           ; yes             ; User VHDL File                                        ; C:/Users/NSB/Documents/U/project/Final Files (Synthesis)/Mano Machine/Mano_Machine_Full.vhd                           ;         ;
+; altsyncram.tdf                                  ; yes             ; Megafunction                                          ; c:/altera/13.1.1/quartus/libraries/megafunctions/altsyncram.tdf                                                       ;         ;
+; stratix_ram_block.inc                           ; yes             ; Megafunction                                          ; c:/altera/13.1.1/quartus/libraries/megafunctions/stratix_ram_block.inc                                                ;         ;
+; lpm_mux.inc                                     ; yes             ; Megafunction                                          ; c:/altera/13.1.1/quartus/libraries/megafunctions/lpm_mux.inc                                                          ;         ;
+; lpm_decode.inc                                  ; yes             ; Megafunction                                          ; c:/altera/13.1.1/quartus/libraries/megafunctions/lpm_decode.inc                                                       ;         ;
+; aglobal131.inc                                  ; yes             ; Megafunction                                          ; c:/altera/13.1.1/quartus/libraries/megafunctions/aglobal131.inc                                                       ;         ;
+; a_rdenreg.inc                                   ; yes             ; Megafunction                                          ; c:/altera/13.1.1/quartus/libraries/megafunctions/a_rdenreg.inc                                                        ;         ;
+; altrom.inc                                      ; yes             ; Megafunction                                          ; c:/altera/13.1.1/quartus/libraries/megafunctions/altrom.inc                                                           ;         ;
+; altram.inc                                      ; yes             ; Megafunction                                          ; c:/altera/13.1.1/quartus/libraries/megafunctions/altram.inc                                                           ;         ;
+; altdpram.inc                                    ; yes             ; Megafunction                                          ; c:/altera/13.1.1/quartus/libraries/megafunctions/altdpram.inc                                                         ;         ;
+; db/altsyncram_8gs1.tdf                          ; yes             ; Auto-Generated Megafunction                           ; C:/Users/NSB/Documents/U/project/Final Files (Synthesis)/Mano Machine/db/altsyncram_8gs1.tdf                          ;         ;
+; db/Ma_Machine.ram0_Memory_4096_35c28ad2.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/NSB/Documents/U/project/Final Files (Synthesis)/Mano Machine/db/Ma_Machine.ram0_Memory_4096_35c28ad2.hdl.mif ;         ;
+; lpm_divide.tdf                                  ; yes             ; Megafunction                                          ; c:/altera/13.1.1/quartus/libraries/megafunctions/lpm_divide.tdf                                                       ;         ;
+; abs_divider.inc                                 ; yes             ; Megafunction                                          ; c:/altera/13.1.1/quartus/libraries/megafunctions/abs_divider.inc                                                      ;         ;
+; sign_div_unsign.inc                             ; yes             ; Megafunction                                          ; c:/altera/13.1.1/quartus/libraries/megafunctions/sign_div_unsign.inc                                                  ;         ;
+; db/lpm_divide_a5m.tdf                           ; yes             ; Auto-Generated Megafunction                           ; C:/Users/NSB/Documents/U/project/Final Files (Synthesis)/Mano Machine/db/lpm_divide_a5m.tdf                           ;         ;
+; db/sign_div_unsign_dnh.tdf                      ; yes             ; Auto-Generated Megafunction                           ; C:/Users/NSB/Documents/U/project/Final Files (Synthesis)/Mano Machine/db/sign_div_unsign_dnh.tdf                      ;         ;
+; db/alt_u_div_03f.tdf                            ; yes             ; Auto-Generated Megafunction                           ; C:/Users/NSB/Documents/U/project/Final Files (Synthesis)/Mano Machine/db/alt_u_div_03f.tdf                            ;         ;
+; db/lpm_divide_kbm.tdf                           ; yes             ; Auto-Generated Megafunction                           ; C:/Users/NSB/Documents/U/project/Final Files (Synthesis)/Mano Machine/db/lpm_divide_kbm.tdf                           ;         ;
+; db/sign_div_unsign_qlh.tdf                      ; yes             ; Auto-Generated Megafunction                           ; C:/Users/NSB/Documents/U/project/Final Files (Synthesis)/Mano Machine/db/sign_div_unsign_qlh.tdf                      ;         ;
+; db/alt_u_div_qve.tdf                            ; yes             ; Auto-Generated Megafunction                           ; C:/Users/NSB/Documents/U/project/Final Files (Synthesis)/Mano Machine/db/alt_u_div_qve.tdf                            ;         ;
++-------------------------------------------------+-----------------+-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 0         ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 0         ;
+;     -- 7 input functions                    ; 0         ;
+;     -- 6 input functions                    ; 0         ;
+;     -- 5 input functions                    ; 0         ;
+;     -- 4 input functions                    ; 0         ;
+;     -- <=3 input functions                  ; 0         ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 39        ;
+; Total DSP Blocks                            ; 0         ;
+; Maximum fan-out node                        ; Inuser[0] ;
+; Maximum fan-out                             ; 1         ;
+; Total fan-out                               ; 39        ;
+; Average fan-out                             ; 0.50      ;
++---------------------------------------------+-----------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                       ;
++----------------------------+-------------------+--------------+-------------------+------------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------------+------------+------+--------------+---------------------+--------------+
+; |Mano_Machine_F            ; 0 (0)             ; 0 (0)        ; 0                 ; 0          ; 39   ; 0            ; |Mano_Machine_F     ; work         ;
++----------------------------+-------------------+--------------+-------------------+------------+------+--------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                      ;
++-----------------------------------------------------------+---------------------------------------------+
+; Register name                                             ; Reason for Removal                          ;
++-----------------------------------------------------------+---------------------------------------------+
+; Mano_Machine:MM1|OUTR16:R9|outoutr[0..7]                  ; Stuck at GND due to stuck port clock_enable ;
+; Mano_Machine:MM1|R_D:DF2|outr_s                           ; Lost fanout                                 ;
+; Mano_Machine:MM1|SC:R10|S_SCout[0..3]                     ; Lost fanout                                 ;
+; Mano_Machine:MM1|IR_16:R6|S_IR[12..15]                    ; Lost fanout                                 ;
+; Mano_Machine:MM1|AR16:R2|S_AR[0..11]                      ; Lost fanout                                 ;
+; Mano_Machine:MM1|SC:R10|SS_SCout[3]                       ; Lost fanout                                 ;
+; Mano_Machine:MM1|S:DF6|S_outs                             ; Lost fanout                                 ;
+; Mano_Machine:MM1|SC:R10|SS_SCout[0..2]                    ; Lost fanout                                 ;
+; Mano_Machine:MM1|AC_16:R5|S_AC[0]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|IR_16:R6|S_IR[0]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|TR_16:R7|S_TR[0]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|Memory_4096:R1|outpm[0]                  ; Lost fanout                                 ;
+; Mano_Machine:MM1|IR_16:R6|S_IR[10]                        ; Lost fanout                                 ;
+; Mano_Machine:MM1|PC_16:R3|S_PC[0]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|DR_16:R4|S_DR[0]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|AC_16:R5|S_AC[1]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|IR_16:R6|S_IR[1]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|TR_16:R7|S_TR[1]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|Memory_4096:R1|outpm[1]                  ; Lost fanout                                 ;
+; Mano_Machine:MM1|PC_16:R3|S_PC[1]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|DR_16:R4|S_DR[1]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|AC_16:R5|S_AC[2]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|IR_16:R6|S_IR[2]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|TR_16:R7|S_TR[2]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|Memory_4096:R1|outpm[2]                  ; Lost fanout                                 ;
+; Mano_Machine:MM1|PC_16:R3|S_PC[2]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|DR_16:R4|S_DR[2]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|AC_16:R5|S_AC[3]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|IR_16:R6|S_IR[3]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|TR_16:R7|S_TR[3]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|Memory_4096:R1|outpm[3]                  ; Lost fanout                                 ;
+; Mano_Machine:MM1|PC_16:R3|S_PC[3]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|DR_16:R4|S_DR[3]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|AC_16:R5|S_AC[4]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|IR_16:R6|S_IR[4]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|TR_16:R7|S_TR[4]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|Memory_4096:R1|outpm[4]                  ; Lost fanout                                 ;
+; Mano_Machine:MM1|PC_16:R3|S_PC[4]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|DR_16:R4|S_DR[4]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|AC_16:R5|S_AC[5]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|IR_16:R6|S_IR[5]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|TR_16:R7|S_TR[5]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|Memory_4096:R1|outpm[5]                  ; Lost fanout                                 ;
+; Mano_Machine:MM1|PC_16:R3|S_PC[5]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|DR_16:R4|S_DR[5]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|AC_16:R5|S_AC[6]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|IR_16:R6|S_IR[6]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|TR_16:R7|S_TR[6]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|Memory_4096:R1|outpm[6]                  ; Lost fanout                                 ;
+; Mano_Machine:MM1|PC_16:R3|S_PC[6]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|DR_16:R4|S_DR[6]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|AC_16:R5|S_AC[7]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|IR_16:R6|S_IR[7]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|TR_16:R7|S_TR[7]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|Memory_4096:R1|outpm[7]                  ; Lost fanout                                 ;
+; Mano_Machine:MM1|PC_16:R3|S_PC[7]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|DR_16:R4|S_DR[7]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|AC_16:R5|S_AC[8]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|IR_16:R6|S_IR[8]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|TR_16:R7|S_TR[8]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|Memory_4096:R1|outpm[8]                  ; Lost fanout                                 ;
+; Mano_Machine:MM1|PC_16:R3|S_PC[8]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|DR_16:R4|S_DR[8]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|AC_16:R5|S_AC[9]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|IR_16:R6|S_IR[9]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|TR_16:R7|S_TR[9]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|Memory_4096:R1|outpm[9]                  ; Lost fanout                                 ;
+; Mano_Machine:MM1|PC_16:R3|S_PC[9]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|DR_16:R4|S_DR[9]                         ; Lost fanout                                 ;
+; Mano_Machine:MM1|AC_16:R5|S_AC[10]                        ; Lost fanout                                 ;
+; Mano_Machine:MM1|TR_16:R7|S_TR[10]                        ; Lost fanout                                 ;
+; Mano_Machine:MM1|Memory_4096:R1|outpm[10]                 ; Lost fanout                                 ;
+; Mano_Machine:MM1|PC_16:R3|S_PC[10]                        ; Lost fanout                                 ;
+; Mano_Machine:MM1|DR_16:R4|S_DR[10]                        ; Lost fanout                                 ;
+; Mano_Machine:MM1|AC_16:R5|S_AC[11]                        ; Lost fanout                                 ;
+; Mano_Machine:MM1|IR_16:R6|S_IR[11]                        ; Lost fanout                                 ;
+; Mano_Machine:MM1|TR_16:R7|S_TR[11]                        ; Lost fanout                                 ;
+; Mano_Machine:MM1|Memory_4096:R1|outpm[11]                 ; Lost fanout                                 ;
+; Mano_Machine:MM1|PC_16:R3|S_PC[11]                        ; Lost fanout                                 ;
+; Mano_Machine:MM1|DR_16:R4|S_DR[11]                        ; Lost fanout                                 ;
+; Mano_Machine:MM1|Memory_4096:R1|outpm[12]                 ; Lost fanout                                 ;
+; Mano_Machine:MM1|AC_16:R5|S_AC[12]                        ; Lost fanout                                 ;
+; Mano_Machine:MM1|DR_16:R4|S_DR[12]                        ; Lost fanout                                 ;
+; Mano_Machine:MM1|TR_16:R7|S_TR[12]                        ; Lost fanout                                 ;
+; Mano_Machine:MM1|Memory_4096:R1|outpm[13]                 ; Lost fanout                                 ;
+; Mano_Machine:MM1|AC_16:R5|S_AC[13]                        ; Lost fanout                                 ;
+; Mano_Machine:MM1|DR_16:R4|S_DR[13]                        ; Lost fanout                                 ;
+; Mano_Machine:MM1|TR_16:R7|S_TR[13]                        ; Lost fanout                                 ;
+; Mano_Machine:MM1|Memory_4096:R1|outpm[14]                 ; Lost fanout                                 ;
+; Mano_Machine:MM1|AC_16:R5|S_AC[14]                        ; Lost fanout                                 ;
+; Mano_Machine:MM1|DR_16:R4|S_DR[14]                        ; Lost fanout                                 ;
+; Mano_Machine:MM1|TR_16:R7|S_TR[14]                        ; Lost fanout                                 ;
+; Mano_Machine:MM1|Memory_4096:R1|outpm[15]                 ; Lost fanout                                 ;
+; Mano_Machine:MM1|AC_16:R5|S_AC[15]                        ; Lost fanout                                 ;
+; Mano_Machine:MM1|DR_16:R4|S_DR[15]                        ; Lost fanout                                 ;
+; Mano_Machine:MM1|TR_16:R7|S_TR[15]                        ; Lost fanout                                 ;
+; Mano_Machine:MM1|IEN:DF5|IENout                           ; Lost fanout                                 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[0..26]  ; Lost fanout                                 ;
+; Mano_Machine:MM1|FGI:DF3|FGI_out_s                        ; Lost fanout                                 ;
+; Mano_Machine:MM1|E:DF1|S_E                                ; Lost fanout                                 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[27..56] ; Lost fanout                                 ;
+; Disp_CA:CCD|dig1[0..5]                                    ; Stuck at GND due to stuck port data_in      ;
+; Disp_CA:CCD|dig1[6]                                       ; Stuck at VCC due to stuck port data_in      ;
+; Disp_CA:CCD|dig2[0..5]                                    ; Stuck at GND due to stuck port data_in      ;
+; Disp_CA:CCD|dig2[6]                                       ; Stuck at VCC due to stuck port data_in      ;
+; Disp_CA:CCD|dig3[0..5]                                    ; Stuck at GND due to stuck port data_in      ;
+; Disp_CA:CCD|dig3[6]                                       ; Stuck at VCC due to stuck port data_in      ;
+; Clock_controll_50MHZ_T_50HZ:CC1|clkout_s                  ; Lost fanout                                 ;
+; Clock_controll_50MHZ_T_50HZ:CC1|CH[0..19]                 ; Lost fanout                                 ;
+; Total Number of Removed Registers = 224                   ;                                             ;
++-----------------------------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                      ;
++-------------------------------------------+--------------------------------+-------------------------------------------------------------------------------------+
+; Register name                             ; Reason for Removal             ; Registers Removed due to This Register                                              ;
++-------------------------------------------+--------------------------------+-------------------------------------------------------------------------------------+
+; Mano_Machine:MM1|R_D:DF2|outr_s           ; Lost Fanouts                   ; Mano_Machine:MM1|SC:R10|S_SCout[3], Mano_Machine:MM1|SC:R10|S_SCout[2],             ;
+;                                           ;                                ; Mano_Machine:MM1|SC:R10|S_SCout[1], Mano_Machine:MM1|SC:R10|S_SCout[0],             ;
+;                                           ;                                ; Mano_Machine:MM1|IR_16:R6|S_IR[12], Mano_Machine:MM1|IR_16:R6|S_IR[13],             ;
+;                                           ;                                ; Mano_Machine:MM1|IR_16:R6|S_IR[14], Mano_Machine:MM1|SC:R10|SS_SCout[3],            ;
+;                                           ;                                ; Mano_Machine:MM1|S:DF6|S_outs, Mano_Machine:MM1|SC:R10|SS_SCout[2],                 ;
+;                                           ;                                ; Mano_Machine:MM1|SC:R10|SS_SCout[1], Mano_Machine:MM1|SC:R10|SS_SCout[0],           ;
+;                                           ;                                ; Mano_Machine:MM1|IR_16:R6|S_IR[0], Mano_Machine:MM1|Memory_4096:R1|outpm[12],       ;
+;                                           ;                                ; Mano_Machine:MM1|AC_16:R5|S_AC[12], Mano_Machine:MM1|DR_16:R4|S_DR[12],             ;
+;                                           ;                                ; Mano_Machine:MM1|TR_16:R7|S_TR[12], Mano_Machine:MM1|Memory_4096:R1|outpm[13],      ;
+;                                           ;                                ; Mano_Machine:MM1|AC_16:R5|S_AC[13], Mano_Machine:MM1|DR_16:R4|S_DR[13],             ;
+;                                           ;                                ; Mano_Machine:MM1|TR_16:R7|S_TR[13], Mano_Machine:MM1|Memory_4096:R1|outpm[14],      ;
+;                                           ;                                ; Mano_Machine:MM1|AC_16:R5|S_AC[14], Mano_Machine:MM1|DR_16:R4|S_DR[14],             ;
+;                                           ;                                ; Mano_Machine:MM1|TR_16:R7|S_TR[14], Mano_Machine:MM1|IEN:DF5|IENout,                ;
+;                                           ;                                ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[49],                              ;
+;                                           ;                                ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[50],                              ;
+;                                           ;                                ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[51],                              ;
+;                                           ;                                ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[52],                              ;
+;                                           ;                                ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[53],                              ;
+;                                           ;                                ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[54],                              ;
+;                                           ;                                ; Clock_controll_50MHZ_T_50HZ:CC1|clkout_s, Clock_controll_50MHZ_T_50HZ:CC1|CH[13],   ;
+;                                           ;                                ; Clock_controll_50MHZ_T_50HZ:CC1|CH[14], Clock_controll_50MHZ_T_50HZ:CC1|CH[15],     ;
+;                                           ;                                ; Clock_controll_50MHZ_T_50HZ:CC1|CH[16], Clock_controll_50MHZ_T_50HZ:CC1|CH[17],     ;
+;                                           ;                                ; Clock_controll_50MHZ_T_50HZ:CC1|CH[18], Clock_controll_50MHZ_T_50HZ:CC1|CH[10],     ;
+;                                           ;                                ; Clock_controll_50MHZ_T_50HZ:CC1|CH[11], Clock_controll_50MHZ_T_50HZ:CC1|CH[12],     ;
+;                                           ;                                ; Clock_controll_50MHZ_T_50HZ:CC1|CH[19], Clock_controll_50MHZ_T_50HZ:CC1|CH[0],      ;
+;                                           ;                                ; Clock_controll_50MHZ_T_50HZ:CC1|CH[1], Clock_controll_50MHZ_T_50HZ:CC1|CH[2],       ;
+;                                           ;                                ; Clock_controll_50MHZ_T_50HZ:CC1|CH[3], Clock_controll_50MHZ_T_50HZ:CC1|CH[4],       ;
+;                                           ;                                ; Clock_controll_50MHZ_T_50HZ:CC1|CH[5], Clock_controll_50MHZ_T_50HZ:CC1|CH[6],       ;
+;                                           ;                                ; Clock_controll_50MHZ_T_50HZ:CC1|CH[7], Clock_controll_50MHZ_T_50HZ:CC1|CH[8],       ;
+;                                           ;                                ; Clock_controll_50MHZ_T_50HZ:CC1|CH[9]                                               ;
+; Mano_Machine:MM1|OUTR16:R9|outoutr[0]     ; Stuck at GND                   ; Mano_Machine:MM1|AC_16:R5|S_AC[0], Mano_Machine:MM1|DR_16:R4|S_DR[0],               ;
+;                                           ; due to stuck port clock_enable ; Mano_Machine:MM1|IR_16:R6|S_IR[5], Mano_Machine:MM1|IR_16:R6|S_IR[6],               ;
+;                                           ;                                ; Mano_Machine:MM1|IR_16:R6|S_IR[7], Mano_Machine:MM1|AC_16:R5|S_AC[9],               ;
+;                                           ;                                ; Mano_Machine:MM1|IR_16:R6|S_IR[9], Mano_Machine:MM1|AC_16:R5|S_AC[10],              ;
+;                                           ;                                ; Mano_Machine:MM1|DR_16:R4|S_DR[10], Mano_Machine:MM1|IR_16:R6|S_IR[11],             ;
+;                                           ;                                ; Mano_Machine:MM1|DR_16:R4|S_DR[11], Disp_CA:CCD|dig1[1], Disp_CA:CCD|dig1[2],       ;
+;                                           ;                                ; Disp_CA:CCD|dig1[4], Disp_CA:CCD|dig1[0], Disp_CA:CCD|dig1[3], Disp_CA:CCD|dig1[5], ;
+;                                           ;                                ; Disp_CA:CCD|dig1[6], Disp_CA:CCD|dig2[0], Disp_CA:CCD|dig2[1], Disp_CA:CCD|dig2[2], ;
+;                                           ;                                ; Disp_CA:CCD|dig2[3], Disp_CA:CCD|dig2[4], Disp_CA:CCD|dig2[5], Disp_CA:CCD|dig2[6], ;
+;                                           ;                                ; Disp_CA:CCD|dig3[0], Disp_CA:CCD|dig3[1], Disp_CA:CCD|dig3[2], Disp_CA:CCD|dig3[3], ;
+;                                           ;                                ; Disp_CA:CCD|dig3[4], Disp_CA:CCD|dig3[5], Disp_CA:CCD|dig3[6]                       ;
+; Mano_Machine:MM1|PC_16:R3|S_PC[0]         ; Lost Fanouts                   ; Mano_Machine:MM1|PC_16:R3|S_PC[2], Mano_Machine:MM1|IR_16:R6|S_IR[3],               ;
+;                                           ;                                ; Mano_Machine:MM1|PC_16:R3|S_PC[3], Mano_Machine:MM1|PC_16:R3|S_PC[5],               ;
+;                                           ;                                ; Mano_Machine:MM1|DR_16:R4|S_DR[5], Mano_Machine:MM1|PC_16:R3|S_PC[6],               ;
+;                                           ;                                ; Mano_Machine:MM1|DR_16:R4|S_DR[6], Mano_Machine:MM1|DR_16:R4|S_DR[7],               ;
+;                                           ;                                ; Mano_Machine:MM1|PC_16:R3|S_PC[8], Mano_Machine:MM1|DR_16:R4|S_DR[8],               ;
+;                                           ;                                ; Mano_Machine:MM1|PC_16:R3|S_PC[9], Mano_Machine:MM1|DR_16:R4|S_DR[9],               ;
+;                                           ;                                ; Mano_Machine:MM1|PC_16:R3|S_PC[10], Mano_Machine:MM1|PC_16:R3|S_PC[11],             ;
+;                                           ;                                ; Mano_Machine:MM1|FGI:DF3|FGI_out_s                                                  ;
+; Mano_Machine:MM1|AR16:R2|S_AR[0]          ; Lost Fanouts                   ; Mano_Machine:MM1|AR16:R2|S_AR[1], Mano_Machine:MM1|AR16:R2|S_AR[2],                 ;
+;                                           ;                                ; Mano_Machine:MM1|AR16:R2|S_AR[3], Mano_Machine:MM1|AR16:R2|S_AR[4],                 ;
+;                                           ;                                ; Mano_Machine:MM1|AR16:R2|S_AR[5], Mano_Machine:MM1|AR16:R2|S_AR[6],                 ;
+;                                           ;                                ; Mano_Machine:MM1|AR16:R2|S_AR[7], Mano_Machine:MM1|AR16:R2|S_AR[8],                 ;
+;                                           ;                                ; Mano_Machine:MM1|AR16:R2|S_AR[9], Mano_Machine:MM1|AR16:R2|S_AR[10],                ;
+;                                           ;                                ; Mano_Machine:MM1|AR16:R2|S_AR[11]                                                   ;
+; Mano_Machine:MM1|Memory_4096:R1|outpm[0]  ; Lost Fanouts                   ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[25],                              ;
+;                                           ;                                ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[0],                               ;
+;                                           ;                                ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[1],                               ;
+;                                           ;                                ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[2],                               ;
+;                                           ;                                ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[3],                               ;
+;                                           ;                                ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[4],                               ;
+;                                           ;                                ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[5],                               ;
+;                                           ;                                ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[26]                               ;
+; Mano_Machine:MM1|IR_16:R6|S_IR[15]        ; Lost Fanouts                   ; Mano_Machine:MM1|Memory_4096:R1|outpm[15], Mano_Machine:MM1|AC_16:R5|S_AC[15],      ;
+;                                           ;                                ; Mano_Machine:MM1|DR_16:R4|S_DR[15], Mano_Machine:MM1|TR_16:R7|S_TR[15],             ;
+;                                           ;                                ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[55],                              ;
+;                                           ;                                ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[56]                               ;
+; Mano_Machine:MM1|OUTR16:R9|outoutr[1]     ; Stuck at GND                   ; Mano_Machine:MM1|AC_16:R5|S_AC[1], Mano_Machine:MM1|DR_16:R4|S_DR[1]                ;
+;                                           ; due to stuck port clock_enable ;                                                                                     ;
+; Mano_Machine:MM1|OUTR16:R9|outoutr[2]     ; Stuck at GND                   ; Mano_Machine:MM1|AC_16:R5|S_AC[2], Mano_Machine:MM1|DR_16:R4|S_DR[2]                ;
+;                                           ; due to stuck port clock_enable ;                                                                                     ;
+; Mano_Machine:MM1|OUTR16:R9|outoutr[3]     ; Stuck at GND                   ; Mano_Machine:MM1|AC_16:R5|S_AC[3], Mano_Machine:MM1|DR_16:R4|S_DR[3]                ;
+;                                           ; due to stuck port clock_enable ;                                                                                     ;
+; Mano_Machine:MM1|OUTR16:R9|outoutr[4]     ; Stuck at GND                   ; Mano_Machine:MM1|AC_16:R5|S_AC[4], Mano_Machine:MM1|DR_16:R4|S_DR[4]                ;
+;                                           ; due to stuck port clock_enable ;                                                                                     ;
+; Mano_Machine:MM1|OUTR16:R9|outoutr[6]     ; Stuck at GND                   ; Mano_Machine:MM1|AC_16:R5|S_AC[6], Mano_Machine:MM1|AC_16:R5|S_AC[11]               ;
+;                                           ; due to stuck port clock_enable ;                                                                                     ;
+; Mano_Machine:MM1|Memory_4096:R1|outpm[1]  ; Lost Fanouts                   ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[27],                              ;
+;                                           ;                                ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[28]                               ;
+; Mano_Machine:MM1|Memory_4096:R1|outpm[2]  ; Lost Fanouts                   ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[29],                              ;
+;                                           ;                                ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[30]                               ;
+; Mano_Machine:MM1|Memory_4096:R1|outpm[3]  ; Lost Fanouts                   ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[31],                              ;
+;                                           ;                                ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[32]                               ;
+; Mano_Machine:MM1|Memory_4096:R1|outpm[4]  ; Lost Fanouts                   ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[33],                              ;
+;                                           ;                                ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[34]                               ;
+; Mano_Machine:MM1|Memory_4096:R1|outpm[5]  ; Lost Fanouts                   ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[35],                              ;
+;                                           ;                                ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[36]                               ;
+; Mano_Machine:MM1|Memory_4096:R1|outpm[6]  ; Lost Fanouts                   ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[37],                              ;
+;                                           ;                                ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[38]                               ;
+; Mano_Machine:MM1|Memory_4096:R1|outpm[7]  ; Lost Fanouts                   ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[39],                              ;
+;                                           ;                                ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[40]                               ;
+; Mano_Machine:MM1|Memory_4096:R1|outpm[8]  ; Lost Fanouts                   ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[41],                              ;
+;                                           ;                                ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[42]                               ;
+; Mano_Machine:MM1|Memory_4096:R1|outpm[9]  ; Lost Fanouts                   ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[43],                              ;
+;                                           ;                                ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[44]                               ;
+; Mano_Machine:MM1|Memory_4096:R1|outpm[10] ; Lost Fanouts                   ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[45],                              ;
+;                                           ;                                ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[46]                               ;
+; Mano_Machine:MM1|Memory_4096:R1|outpm[11] ; Lost Fanouts                   ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[47],                              ;
+;                                           ;                                ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[48]                               ;
+; Mano_Machine:MM1|OUTR16:R9|outoutr[5]     ; Stuck at GND                   ; Mano_Machine:MM1|AC_16:R5|S_AC[5]                                                   ;
+;                                           ; due to stuck port clock_enable ;                                                                                     ;
+; Mano_Machine:MM1|OUTR16:R9|outoutr[7]     ; Stuck at GND                   ; Mano_Machine:MM1|AC_16:R5|S_AC[7]                                                   ;
+;                                           ; due to stuck port clock_enable ;                                                                                     ;
+; Mano_Machine:MM1|PC_16:R3|S_PC[4]         ; Lost Fanouts                   ; Mano_Machine:MM1|PC_16:R3|S_PC[7]                                                   ;
++-------------------------------------------+--------------------------------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Registers Added for RAM Pass-Through Logic                                                         ;
++-------------------------------------------------------+--------------------------------------------+
+; Register Name                                         ; RAM Name                                   ;
++-------------------------------------------------------+--------------------------------------------+
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[0]  ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[1]  ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[2]  ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[3]  ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[4]  ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[5]  ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[6]  ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[7]  ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[8]  ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[9]  ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[10] ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[11] ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[12] ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[13] ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[14] ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[15] ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[16] ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[17] ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[18] ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[19] ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[20] ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[21] ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[22] ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[23] ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[24] ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[25] ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[26] ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[27] ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[28] ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[29] ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[30] ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[31] ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[32] ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[33] ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[34] ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[35] ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[36] ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[37] ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[38] ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[39] ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[40] ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[41] ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[42] ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[43] ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[44] ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[45] ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[46] ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[47] ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[48] ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[49] ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[50] ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[51] ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[52] ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[53] ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[54] ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[55] ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
+; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0_bypass[56] ; Mano_Machine:MM1|Memory_4096:R1|data_rtl_0 ;
++-------------------------------------------------------+--------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |Mano_Machine_F|Mano_Machine:MM1|SC:R10|SS_SCout[3] ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |Mano_Machine_F|Mano_Machine:MM1|DR_16:R4|S_DR[5]   ;
+; 5:1                ; 12 bits   ; 36 LEs        ; 0 LEs                ; 36 LEs                 ; Yes        ; |Mano_Machine_F|Mano_Machine:MM1|PC_16:R3|S_PC[9]   ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |Mano_Machine_F|Mano_Machine:MM1|AC_16:R5|S_AC[3]   ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Mano_Machine_F|Mano_Machine:MM1|BUS16:BB1|Mux15    ;
+; 7:1                ; 12 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |Mano_Machine_F|Mano_Machine:MM1|BUS16:BB1|Mux11    ;
+; 6:1                ; 15 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; No         ; |Mano_Machine_F|Mano_Machine:MM1|MiniALU:MA1|Mux16  ;
+; 5:1                ; 12 bits   ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; No         ; |Mano_Machine_F|Mano_Machine:MM1|AR16:R2|S_AR       ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |Mano_Machine_F|Mano_Machine:MM1|CU_16:CC1|selb[1]  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Source assignments for Mano_Machine:MM1|Memory_4096:R1|altsyncram:data_rtl_0|altsyncram_8gs1:auto_generated ;
++---------------------------------+--------------------+------+-----------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                            ;
++---------------------------------+--------------------+------+-----------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                             ;
++---------------------------------+--------------------+------+-----------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Mano_Machine:MM1|Memory_4096:R1|altsyncram:data_rtl_0 ;
++------------------------------------+-------------------------------------------------+-----------------+
+; Parameter Name                     ; Value                                           ; Type            ;
++------------------------------------+-------------------------------------------------+-----------------+
+; BYTE_SIZE_BLOCK                    ; 8                                               ; Untyped         ;
+; AUTO_CARRY_CHAINS                  ; ON                                              ; AUTO_CARRY      ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                             ; IGNORE_CARRY    ;
+; AUTO_CASCADE_CHAINS                ; ON                                              ; AUTO_CASCADE    ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                             ; IGNORE_CASCADE  ;
+; WIDTH_BYTEENA                      ; 1                                               ; Untyped         ;
+; OPERATION_MODE                     ; DUAL_PORT                                       ; Untyped         ;
+; WIDTH_A                            ; 16                                              ; Untyped         ;
+; WIDTHAD_A                          ; 12                                              ; Untyped         ;
+; NUMWORDS_A                         ; 4096                                            ; Untyped         ;
+; OUTDATA_REG_A                      ; UNREGISTERED                                    ; Untyped         ;
+; ADDRESS_ACLR_A                     ; NONE                                            ; Untyped         ;
+; OUTDATA_ACLR_A                     ; NONE                                            ; Untyped         ;
+; WRCONTROL_ACLR_A                   ; NONE                                            ; Untyped         ;
+; INDATA_ACLR_A                      ; NONE                                            ; Untyped         ;
+; BYTEENA_ACLR_A                     ; NONE                                            ; Untyped         ;
+; WIDTH_B                            ; 16                                              ; Untyped         ;
+; WIDTHAD_B                          ; 12                                              ; Untyped         ;
+; NUMWORDS_B                         ; 4096                                            ; Untyped         ;
+; INDATA_REG_B                       ; CLOCK1                                          ; Untyped         ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                          ; Untyped         ;
+; RDCONTROL_REG_B                    ; CLOCK1                                          ; Untyped         ;
+; ADDRESS_REG_B                      ; CLOCK0                                          ; Untyped         ;
+; OUTDATA_REG_B                      ; UNREGISTERED                                    ; Untyped         ;
+; BYTEENA_REG_B                      ; CLOCK1                                          ; Untyped         ;
+; INDATA_ACLR_B                      ; NONE                                            ; Untyped         ;
+; WRCONTROL_ACLR_B                   ; NONE                                            ; Untyped         ;
+; ADDRESS_ACLR_B                     ; NONE                                            ; Untyped         ;
+; OUTDATA_ACLR_B                     ; NONE                                            ; Untyped         ;
+; RDCONTROL_ACLR_B                   ; NONE                                            ; Untyped         ;
+; BYTEENA_ACLR_B                     ; NONE                                            ; Untyped         ;
+; WIDTH_BYTEENA_A                    ; 1                                               ; Untyped         ;
+; WIDTH_BYTEENA_B                    ; 1                                               ; Untyped         ;
+; RAM_BLOCK_TYPE                     ; AUTO                                            ; Untyped         ;
+; BYTE_SIZE                          ; 8                                               ; Untyped         ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                                        ; Untyped         ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                            ; Untyped         ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                            ; Untyped         ;
+; INIT_FILE                          ; db/Ma_Machine.ram0_Memory_4096_35c28ad2.hdl.mif ; Untyped         ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                          ; Untyped         ;
+; MAXIMUM_DEPTH                      ; 0                                               ; Untyped         ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                          ; Untyped         ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                          ; Untyped         ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                          ; Untyped         ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                          ; Untyped         ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                                 ; Untyped         ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                                 ; Untyped         ;
+; ENABLE_ECC                         ; FALSE                                           ; Untyped         ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                           ; Untyped         ;
+; WIDTH_ECCSTATUS                    ; 3                                               ; Untyped         ;
+; DEVICE_FAMILY                      ; Cyclone V                                       ; Untyped         ;
+; CBXI_PARAMETER                     ; altsyncram_8gs1                                 ; Untyped         ;
++------------------------------------+-------------------------------------------------+-----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: CONVERTER:CC2|lpm_divide:Mod0 ;
++------------------------+----------------+--------------------------------------+
+; Parameter Name         ; Value          ; Type                                 ;
++------------------------+----------------+--------------------------------------+
+; LPM_WIDTHN             ; 16             ; Untyped                              ;
+; LPM_WIDTHD             ; 16             ; Untyped                              ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                              ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                              ;
+; LPM_PIPELINE           ; 0              ; Untyped                              ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                              ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                              ;
+; CBXI_PARAMETER         ; lpm_divide_a5m ; Untyped                              ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                              ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                              ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                           ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                         ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                         ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                       ;
++------------------------+----------------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: CONVERTER:CC2|lpm_divide:Div0 ;
++------------------------+----------------+--------------------------------------+
+; Parameter Name         ; Value          ; Type                                 ;
++------------------------+----------------+--------------------------------------+
+; LPM_WIDTHN             ; 16             ; Untyped                              ;
+; LPM_WIDTHD             ; 4              ; Untyped                              ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                              ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                              ;
+; LPM_PIPELINE           ; 0              ; Untyped                              ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                              ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                              ;
+; CBXI_PARAMETER         ; lpm_divide_kbm ; Untyped                              ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                              ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                              ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                           ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                         ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                         ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                       ;
++------------------------+----------------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: CONVERTER:CC2|lpm_divide:Mod1 ;
++------------------------+----------------+--------------------------------------+
+; Parameter Name         ; Value          ; Type                                 ;
++------------------------+----------------+--------------------------------------+
+; LPM_WIDTHN             ; 16             ; Untyped                              ;
+; LPM_WIDTHD             ; 16             ; Untyped                              ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                              ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                              ;
+; LPM_PIPELINE           ; 0              ; Untyped                              ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                              ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                              ;
+; CBXI_PARAMETER         ; lpm_divide_a5m ; Untyped                              ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                              ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                              ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                           ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                         ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                         ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                       ;
++------------------------+----------------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: CONVERTER:CC2|lpm_divide:Div1 ;
++------------------------+----------------+--------------------------------------+
+; Parameter Name         ; Value          ; Type                                 ;
++------------------------+----------------+--------------------------------------+
+; LPM_WIDTHN             ; 16             ; Untyped                              ;
+; LPM_WIDTHD             ; 4              ; Untyped                              ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                              ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                              ;
+; LPM_PIPELINE           ; 0              ; Untyped                              ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                              ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                              ;
+; CBXI_PARAMETER         ; lpm_divide_kbm ; Untyped                              ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                              ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                              ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                           ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                         ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                         ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                       ;
++------------------------+----------------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: CONVERTER:CC2|lpm_divide:Mod2 ;
++------------------------+----------------+--------------------------------------+
+; Parameter Name         ; Value          ; Type                                 ;
++------------------------+----------------+--------------------------------------+
+; LPM_WIDTHN             ; 16             ; Untyped                              ;
+; LPM_WIDTHD             ; 16             ; Untyped                              ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                              ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                              ;
+; LPM_PIPELINE           ; 0              ; Untyped                              ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                              ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                              ;
+; CBXI_PARAMETER         ; lpm_divide_a5m ; Untyped                              ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                              ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                              ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                           ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                         ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                         ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                       ;
++------------------------+----------------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                  ;
++-------------------------------------------+-------------------------------------------------------+
+; Name                                      ; Value                                                 ;
++-------------------------------------------+-------------------------------------------------------+
+; Number of entity instances                ; 1                                                     ;
+; Entity Instance                           ; Mano_Machine:MM1|Memory_4096:R1|altsyncram:data_rtl_0 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                             ;
+;     -- WIDTH_A                            ; 16                                                    ;
+;     -- NUMWORDS_A                         ; 4096                                                  ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                          ;
+;     -- WIDTH_B                            ; 16                                                    ;
+;     -- NUMWORDS_B                         ; 4096                                                  ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                                ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                          ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                  ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                                              ;
++-------------------------------------------+-------------------------------------------------------+
+
+
++-------------------------------------------------------+
+; Port Connectivity Checks: "Mano_Machine:MM1|TR_16:R7" ;
++------+-------+----------+-----------------------------+
+; Port ; Type  ; Severity ; Details                     ;
++------+-------+----------+-----------------------------+
+; incr ; Input ; Info     ; Stuck at GND                ;
+; clr  ; Input ; Info     ; Stuck at GND                ;
++------+-------+----------+-----------------------------+
+
+
++-------------------------------------------------------+
+; Port Connectivity Checks: "Mano_Machine:MM1|DR_16:R4" ;
++------+-------+----------+-----------------------------+
+; Port ; Type  ; Severity ; Details                     ;
++------+-------+----------+-----------------------------+
+; clr  ; Input ; Info     ; Stuck at GND                ;
++------+-------+----------+-----------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Mano_Machine:MM1|CU_16:CC1"                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; loadoutr ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Mano_Machine:MM1|Decoder4:QQ1"                                                          ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; o[15..7] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Disp_CA:CCD"                                                                        ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; dig4 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; dig5 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------+
+; Port Connectivity Checks: "CONVERTER:CC2"    ;
++------------+-------+----------+--------------+
+; Port       ; Type  ; Severity ; Details      ;
++------------+-------+----------+--------------+
+; ins[15..8] ; Input ; Info     ; Stuck at GND ;
++------------+-------+----------+--------------+
+
+
++-------------------------------------------------------------+
+; Port Connectivity Checks: "Clock_controll_50MHZ_T_50HZ:CC1" ;
++-------+-------+----------+----------------------------------+
+; Port  ; Type  ; Severity ; Details                          ;
++-------+-------+----------+----------------------------------+
+; reset ; Input ; Info     ; Stuck at GND                     ;
++-------+-------+----------+----------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.1.0 Build 162 10/23/2013 SJ Full Version
+    Info: Processing started: Wed Oct 16 13:17:28 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Ma_Machine -c Ma_Machine
+Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
+Info (12021): Found 2 design units, including 1 entities, in source file memory.vhd
+    Info (12022): Found design unit 1: Memory_4096-Memory_4096_behave
+    Info (12023): Found entity 1: Memory_4096
+Info (12021): Found 2 design units, including 1 entities, in source file ar.vhd
+    Info (12022): Found design unit 1: AR16-AR16_behave
+    Info (12023): Found entity 1: AR16
+Info (12021): Found 2 design units, including 1 entities, in source file pc.vhd
+    Info (12022): Found design unit 1: PC_16-PC_16_behave
+    Info (12023): Found entity 1: PC_16
+Warning (12019): Can't analyze file -- file Ma_Machine.vhd is missing
+Info (12021): Found 2 design units, including 1 entities, in source file dr.vhd
+    Info (12022): Found design unit 1: DR_16-DR_16_behave
+    Info (12023): Found entity 1: DR_16
+Info (12021): Found 2 design units, including 1 entities, in source file ac.vhd
+    Info (12022): Found design unit 1: AC_16-AC_16_behave
+    Info (12023): Found entity 1: AC_16
+Info (12021): Found 2 design units, including 1 entities, in source file ir.vhd
+    Info (12022): Found design unit 1: IR_16-IR_16_behave
+    Info (12023): Found entity 1: IR_16
+Info (12021): Found 2 design units, including 1 entities, in source file tr.vhd
+    Info (12022): Found design unit 1: TR_16-TR_16_behave
+    Info (12023): Found entity 1: TR_16
+Info (12021): Found 2 design units, including 1 entities, in source file inpr.vhd
+    Info (12022): Found design unit 1: INPR-INPR_behave
+    Info (12023): Found entity 1: INPR
+Info (12021): Found 2 design units, including 1 entities, in source file outr.vhd
+    Info (12022): Found design unit 1: OUTR16-OUTR16_behave
+    Info (12023): Found entity 1: OUTR16
+Info (12021): Found 2 design units, including 1 entities, in source file sc.vhd
+    Info (12022): Found design unit 1: SC-SC_behave
+    Info (12023): Found entity 1: SC
+Info (12021): Found 2 design units, including 1 entities, in source file alu.vhd
+    Info (12022): Found design unit 1: MiniALU-MiniALU_behave
+    Info (12023): Found entity 1: MiniALU
+Info (12021): Found 2 design units, including 1 entities, in source file e.vhd
+    Info (12022): Found design unit 1: E-E_behave
+    Info (12023): Found entity 1: E
+Info (12021): Found 2 design units, including 1 entities, in source file fgi.vhd
+    Info (12022): Found design unit 1: FGI-FGI_behave
+    Info (12023): Found entity 1: FGI
+Info (12021): Found 2 design units, including 1 entities, in source file fgo.vhd
+    Info (12022): Found design unit 1: FGO-FGO_behave
+    Info (12023): Found entity 1: FGO
+Info (12021): Found 2 design units, including 1 entities, in source file ien.vhd
+    Info (12022): Found design unit 1: IEN-IEN_Behave
+    Info (12023): Found entity 1: IEN
+Info (12021): Found 2 design units, including 1 entities, in source file r.vhd
+    Info (12022): Found design unit 1: R_D-R_behave
+    Info (12023): Found entity 1: R_D
+Info (12021): Found 2 design units, including 1 entities, in source file s.vhd
+    Info (12022): Found design unit 1: S-S_Behave
+    Info (12023): Found entity 1: S
+Info (12021): Found 2 design units, including 1 entities, in source file decoder4.vhd
+    Info (12022): Found design unit 1: Decoder4-Decoder4_behave
+    Info (12023): Found entity 1: Decoder4
+Info (12021): Found 2 design units, including 1 entities, in source file decoder3.vhd
+    Info (12022): Found design unit 1: Decoder3-Decoder3_behave
+    Info (12023): Found entity 1: Decoder3
+Info (12021): Found 2 design units, including 1 entities, in source file cu.vhd
+    Info (12022): Found design unit 1: CU_16-CU_16_behave
+    Info (12023): Found entity 1: CU_16
+Info (12021): Found 2 design units, including 1 entities, in source file bus.vhd
+    Info (12022): Found design unit 1: BUS16-BUS16_Behave
+    Info (12023): Found entity 1: BUS16
+Info (12021): Found 2 design units, including 1 entities, in source file converter.vhd
+    Info (12022): Found design unit 1: CONVERTER-CONVERTER_Behave
+    Info (12023): Found entity 1: CONVERTER
+Info (12021): Found 2 design units, including 1 entities, in source file clock_controll.vhd
+    Info (12022): Found design unit 1: Clock_controll_50MHZ_T_50HZ-Clock_Controll_50MHZ_T_50HZ_Behave
+    Info (12023): Found entity 1: Clock_controll_50MHZ_T_50HZ
+Info (12021): Found 2 design units, including 1 entities, in source file mano_machine.vhd
+    Info (12022): Found design unit 1: Mano_Machine-Mano_Machine_Behave
+    Info (12023): Found entity 1: Mano_Machine
+Info (12021): Found 2 design units, including 1 entities, in source file disp.vhd
+    Info (12022): Found design unit 1: Disp_CA-Disp_CA_Behave
+    Info (12023): Found entity 1: Disp_CA
+Info (12021): Found 2 design units, including 1 entities, in source file mano_machine_full.vhd
+    Info (12022): Found design unit 1: Mano_Machine_F-Mano_Machine_F_Behave
+    Info (12023): Found entity 1: Mano_Machine_F
+Info (12127): Elaborating entity "Mano_Machine_F" for the top level hierarchy
+Info (12128): Elaborating entity "Clock_controll_50MHZ_T_50HZ" for hierarchy "Clock_controll_50MHZ_T_50HZ:CC1"
+Warning (10492): VHDL Process Statement warning at Clock_Controll.vhd(18): signal "EN" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Clock_Controll.vhd(19): signal "reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12128): Elaborating entity "CONVERTER" for hierarchy "CONVERTER:CC2"
+Info (12128): Elaborating entity "Disp_CA" for hierarchy "Disp_CA:CCD"
+Info (12128): Elaborating entity "Mano_Machine" for hierarchy "Mano_Machine:MM1"
+Warning (10036): Verilog HDL or VHDL warning at Mano_Machine.vhd(251): object "loadoutr" assigned a value but never read
+Info (12128): Elaborating entity "Decoder4" for hierarchy "Mano_Machine:MM1|Decoder4:QQ1"
+Info (12128): Elaborating entity "BUS16" for hierarchy "Mano_Machine:MM1|BUS16:BB1"
+Warning (10492): VHDL Process Statement warning at BUS.vhd(38): signal "S_BUS" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at BUS.vhd(20): inferring latch(es) for signal or variable "S_BUS", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "S_BUS[0]" at BUS.vhd(20)
+Info (10041): Inferred latch for "S_BUS[1]" at BUS.vhd(20)
+Info (10041): Inferred latch for "S_BUS[2]" at BUS.vhd(20)
+Info (10041): Inferred latch for "S_BUS[3]" at BUS.vhd(20)
+Info (10041): Inferred latch for "S_BUS[4]" at BUS.vhd(20)
+Info (10041): Inferred latch for "S_BUS[5]" at BUS.vhd(20)
+Info (10041): Inferred latch for "S_BUS[6]" at BUS.vhd(20)
+Info (10041): Inferred latch for "S_BUS[7]" at BUS.vhd(20)
+Info (10041): Inferred latch for "S_BUS[8]" at BUS.vhd(20)
+Info (10041): Inferred latch for "S_BUS[9]" at BUS.vhd(20)
+Info (10041): Inferred latch for "S_BUS[10]" at BUS.vhd(20)
+Info (10041): Inferred latch for "S_BUS[11]" at BUS.vhd(20)
+Info (10041): Inferred latch for "S_BUS[12]" at BUS.vhd(20)
+Info (10041): Inferred latch for "S_BUS[13]" at BUS.vhd(20)
+Info (10041): Inferred latch for "S_BUS[14]" at BUS.vhd(20)
+Info (10041): Inferred latch for "S_BUS[15]" at BUS.vhd(20)
+Info (12128): Elaborating entity "CU_16" for hierarchy "Mano_Machine:MM1|CU_16:CC1"
+Info (10041): Inferred latch for "Rout" at CU.vhd(136)
+Info (12128): Elaborating entity "Decoder3" for hierarchy "Mano_Machine:MM1|CU_16:CC1|Decoder3:U1"
+Info (10041): Inferred latch for "o[0]" at Decoder3.vhd(12)
+Info (10041): Inferred latch for "o[1]" at Decoder3.vhd(12)
+Info (10041): Inferred latch for "o[2]" at Decoder3.vhd(12)
+Info (10041): Inferred latch for "o[3]" at Decoder3.vhd(12)
+Info (10041): Inferred latch for "o[4]" at Decoder3.vhd(12)
+Info (10041): Inferred latch for "o[5]" at Decoder3.vhd(12)
+Info (10041): Inferred latch for "o[6]" at Decoder3.vhd(12)
+Info (10041): Inferred latch for "o[7]" at Decoder3.vhd(12)
+Info (12128): Elaborating entity "MiniALU" for hierarchy "Mano_Machine:MM1|MiniALU:MA1"
+Warning (10631): VHDL Process Statement warning at ALU.vhd(24): inferring latch(es) for signal or variable "S_ALu", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at ALU.vhd(24): inferring latch(es) for signal or variable "Cout", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "Cout" at ALU.vhd(24)
+Info (10041): Inferred latch for "S_ALu[0]" at ALU.vhd(24)
+Info (10041): Inferred latch for "S_ALu[1]" at ALU.vhd(24)
+Info (10041): Inferred latch for "S_ALu[2]" at ALU.vhd(24)
+Info (10041): Inferred latch for "S_ALu[3]" at ALU.vhd(24)
+Info (10041): Inferred latch for "S_ALu[4]" at ALU.vhd(24)
+Info (10041): Inferred latch for "S_ALu[5]" at ALU.vhd(24)
+Info (10041): Inferred latch for "S_ALu[6]" at ALU.vhd(24)
+Info (10041): Inferred latch for "S_ALu[7]" at ALU.vhd(24)
+Info (10041): Inferred latch for "S_ALu[8]" at ALU.vhd(24)
+Info (10041): Inferred latch for "S_ALu[9]" at ALU.vhd(24)
+Info (10041): Inferred latch for "S_ALu[10]" at ALU.vhd(24)
+Info (10041): Inferred latch for "S_ALu[11]" at ALU.vhd(24)
+Info (10041): Inferred latch for "S_ALu[12]" at ALU.vhd(24)
+Info (10041): Inferred latch for "S_ALu[13]" at ALU.vhd(24)
+Info (10041): Inferred latch for "S_ALu[14]" at ALU.vhd(24)
+Info (10041): Inferred latch for "S_ALu[15]" at ALU.vhd(24)
+Info (10041): Inferred latch for "S_ALu[16]" at ALU.vhd(24)
+Info (12128): Elaborating entity "Memory_4096" for hierarchy "Mano_Machine:MM1|Memory_4096:R1"
+Info (12128): Elaborating entity "AR16" for hierarchy "Mano_Machine:MM1|AR16:R2"
+Info (12128): Elaborating entity "PC_16" for hierarchy "Mano_Machine:MM1|PC_16:R3"
+Info (12128): Elaborating entity "DR_16" for hierarchy "Mano_Machine:MM1|DR_16:R4"
+Warning (10492): VHDL Process Statement warning at DR.vhd(32): signal "S_DR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12128): Elaborating entity "AC_16" for hierarchy "Mano_Machine:MM1|AC_16:R5"
+Warning (10492): VHDL Process Statement warning at AC.vhd(33): signal "S_AC" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12128): Elaborating entity "IR_16" for hierarchy "Mano_Machine:MM1|IR_16:R6"
+Info (12128): Elaborating entity "TR_16" for hierarchy "Mano_Machine:MM1|TR_16:R7"
+Info (12128): Elaborating entity "INPR" for hierarchy "Mano_Machine:MM1|INPR:R8"
+Info (12128): Elaborating entity "OUTR16" for hierarchy "Mano_Machine:MM1|OUTR16:R9"
+Info (12128): Elaborating entity "SC" for hierarchy "Mano_Machine:MM1|SC:R10"
+Info (12128): Elaborating entity "E" for hierarchy "Mano_Machine:MM1|E:DF1"
+Warning (10492): VHDL Process Statement warning at E.vhd(28): signal "S_E" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12128): Elaborating entity "R_D" for hierarchy "Mano_Machine:MM1|R_D:DF2"
+Info (12128): Elaborating entity "FGI" for hierarchy "Mano_Machine:MM1|FGI:DF3"
+Info (12128): Elaborating entity "FGO" for hierarchy "Mano_Machine:MM1|FGO:DF4"
+Warning (10541): VHDL Signal Declaration warning at FGO.vhd(7): used implicit default value for signal "FGO_out" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Info (12128): Elaborating entity "IEN" for hierarchy "Mano_Machine:MM1|IEN:DF5"
+Info (12128): Elaborating entity "S" for hierarchy "Mano_Machine:MM1|S:DF6"
+Warning (276020): Inferred RAM node "Mano_Machine:MM1|Memory_4096:R1|data_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
+Info (19000): Inferred 1 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "Mano_Machine:MM1|Memory_4096:R1|data_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 16
+        Info (286033): Parameter WIDTHAD_A set to 12
+        Info (286033): Parameter NUMWORDS_A set to 4096
+        Info (286033): Parameter WIDTH_B set to 16
+        Info (286033): Parameter WIDTHAD_B set to 12
+        Info (286033): Parameter NUMWORDS_B set to 4096
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter INIT_FILE set to db/Ma_Machine.ram0_Memory_4096_35c28ad2.hdl.mif
+        Info (286033): Parameter READ_DURING_WRITE_MODE_MIXED_PORTS set to OLD_DATA
+Info (278001): Inferred 5 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "CONVERTER:CC2|Mod0"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "CONVERTER:CC2|Div0"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "CONVERTER:CC2|Mod1"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "CONVERTER:CC2|Div1"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "CONVERTER:CC2|Mod2"
+Info (12130): Elaborated megafunction instantiation "Mano_Machine:MM1|Memory_4096:R1|altsyncram:data_rtl_0"
+Info (12133): Instantiated megafunction "Mano_Machine:MM1|Memory_4096:R1|altsyncram:data_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "16"
+    Info (12134): Parameter "WIDTHAD_A" = "12"
+    Info (12134): Parameter "NUMWORDS_A" = "4096"
+    Info (12134): Parameter "WIDTH_B" = "16"
+    Info (12134): Parameter "WIDTHAD_B" = "12"
+    Info (12134): Parameter "NUMWORDS_B" = "4096"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "INIT_FILE" = "db/Ma_Machine.ram0_Memory_4096_35c28ad2.hdl.mif"
+    Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_8gs1.tdf
+    Info (12023): Found entity 1: altsyncram_8gs1
+Info (12130): Elaborated megafunction instantiation "CONVERTER:CC2|lpm_divide:Mod0"
+Info (12133): Instantiated megafunction "CONVERTER:CC2|lpm_divide:Mod0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "16"
+    Info (12134): Parameter "LPM_WIDTHD" = "16"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_a5m.tdf
+    Info (12023): Found entity 1: lpm_divide_a5m
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_dnh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_dnh
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_03f.tdf
+    Info (12023): Found entity 1: alt_u_div_03f
+Info (12130): Elaborated megafunction instantiation "CONVERTER:CC2|lpm_divide:Div0"
+Info (12133): Instantiated megafunction "CONVERTER:CC2|lpm_divide:Div0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "16"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_kbm.tdf
+    Info (12023): Found entity 1: lpm_divide_kbm
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_qlh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_qlh
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_qve.tdf
+    Info (12023): Found entity 1: alt_u_div_qve
+Info (12130): Elaborated megafunction instantiation "CONVERTER:CC2|lpm_divide:Mod1"
+Info (12133): Instantiated megafunction "CONVERTER:CC2|lpm_divide:Mod1" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "16"
+    Info (12134): Parameter "LPM_WIDTHD" = "16"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12130): Elaborated megafunction instantiation "CONVERTER:CC2|lpm_divide:Div1"
+Info (12133): Instantiated megafunction "CONVERTER:CC2|lpm_divide:Div1" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "16"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following RAM node(s):
+        Warning (14320): Synthesized away node "Mano_Machine:MM1|Memory_4096:R1|altsyncram:data_rtl_0|altsyncram_8gs1:auto_generated|ram_block1a0"
+        Warning (14320): Synthesized away node "Mano_Machine:MM1|Memory_4096:R1|altsyncram:data_rtl_0|altsyncram_8gs1:auto_generated|ram_block1a1"
+        Warning (14320): Synthesized away node "Mano_Machine:MM1|Memory_4096:R1|altsyncram:data_rtl_0|altsyncram_8gs1:auto_generated|ram_block1a2"
+        Warning (14320): Synthesized away node "Mano_Machine:MM1|Memory_4096:R1|altsyncram:data_rtl_0|altsyncram_8gs1:auto_generated|ram_block1a3"
+        Warning (14320): Synthesized away node "Mano_Machine:MM1|Memory_4096:R1|altsyncram:data_rtl_0|altsyncram_8gs1:auto_generated|ram_block1a4"
+        Warning (14320): Synthesized away node "Mano_Machine:MM1|Memory_4096:R1|altsyncram:data_rtl_0|altsyncram_8gs1:auto_generated|ram_block1a5"
+        Warning (14320): Synthesized away node "Mano_Machine:MM1|Memory_4096:R1|altsyncram:data_rtl_0|altsyncram_8gs1:auto_generated|ram_block1a6"
+        Warning (14320): Synthesized away node "Mano_Machine:MM1|Memory_4096:R1|altsyncram:data_rtl_0|altsyncram_8gs1:auto_generated|ram_block1a7"
+        Warning (14320): Synthesized away node "Mano_Machine:MM1|Memory_4096:R1|altsyncram:data_rtl_0|altsyncram_8gs1:auto_generated|ram_block1a8"
+        Warning (14320): Synthesized away node "Mano_Machine:MM1|Memory_4096:R1|altsyncram:data_rtl_0|altsyncram_8gs1:auto_generated|ram_block1a9"
+        Warning (14320): Synthesized away node "Mano_Machine:MM1|Memory_4096:R1|altsyncram:data_rtl_0|altsyncram_8gs1:auto_generated|ram_block1a10"
+        Warning (14320): Synthesized away node "Mano_Machine:MM1|Memory_4096:R1|altsyncram:data_rtl_0|altsyncram_8gs1:auto_generated|ram_block1a11"
+        Warning (14320): Synthesized away node "Mano_Machine:MM1|Memory_4096:R1|altsyncram:data_rtl_0|altsyncram_8gs1:auto_generated|ram_block1a12"
+        Warning (14320): Synthesized away node "Mano_Machine:MM1|Memory_4096:R1|altsyncram:data_rtl_0|altsyncram_8gs1:auto_generated|ram_block1a13"
+        Warning (14320): Synthesized away node "Mano_Machine:MM1|Memory_4096:R1|altsyncram:data_rtl_0|altsyncram_8gs1:auto_generated|ram_block1a14"
+        Warning (14320): Synthesized away node "Mano_Machine:MM1|Memory_4096:R1|altsyncram:data_rtl_0|altsyncram_8gs1:auto_generated|ram_block1a15"
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "dig1[0]" is stuck at GND
+    Warning (13410): Pin "dig1[1]" is stuck at GND
+    Warning (13410): Pin "dig1[2]" is stuck at GND
+    Warning (13410): Pin "dig1[3]" is stuck at GND
+    Warning (13410): Pin "dig1[4]" is stuck at GND
+    Warning (13410): Pin "dig1[5]" is stuck at GND
+    Warning (13410): Pin "dig1[6]" is stuck at VCC
+    Warning (13410): Pin "dig2[0]" is stuck at GND
+    Warning (13410): Pin "dig2[1]" is stuck at GND
+    Warning (13410): Pin "dig2[2]" is stuck at GND
+    Warning (13410): Pin "dig2[3]" is stuck at GND
+    Warning (13410): Pin "dig2[4]" is stuck at GND
+    Warning (13410): Pin "dig2[5]" is stuck at GND
+    Warning (13410): Pin "dig2[6]" is stuck at VCC
+    Warning (13410): Pin "dig3[0]" is stuck at GND
+    Warning (13410): Pin "dig3[1]" is stuck at GND
+    Warning (13410): Pin "dig3[2]" is stuck at GND
+    Warning (13410): Pin "dig3[3]" is stuck at GND
+    Warning (13410): Pin "dig3[4]" is stuck at GND
+    Warning (13410): Pin "dig3[5]" is stuck at GND
+    Warning (13410): Pin "dig3[6]" is stuck at VCC
+    Warning (13410): Pin "Output[0]" is stuck at GND
+    Warning (13410): Pin "Output[1]" is stuck at GND
+    Warning (13410): Pin "Output[2]" is stuck at GND
+    Warning (13410): Pin "Output[3]" is stuck at GND
+    Warning (13410): Pin "Output[4]" is stuck at GND
+    Warning (13410): Pin "Output[5]" is stuck at GND
+    Warning (13410): Pin "Output[6]" is stuck at GND
+    Warning (13410): Pin "Output[7]" is stuck at GND
+Info (17049): 195 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 10 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "Inuser[0]"
+    Warning (15610): No output dependent on input pin "Inuser[1]"
+    Warning (15610): No output dependent on input pin "Inuser[2]"
+    Warning (15610): No output dependent on input pin "Inuser[3]"
+    Warning (15610): No output dependent on input pin "Inuser[4]"
+    Warning (15610): No output dependent on input pin "Inuser[5]"
+    Warning (15610): No output dependent on input pin "Inuser[6]"
+    Warning (15610): No output dependent on input pin "Inuser[7]"
+    Warning (15610): No output dependent on input pin "clk"
+    Warning (15610): No output dependent on input pin "St"
+Info (21057): Implemented 39 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 10 input pins
+    Info (21059): Implemented 29 output pins
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 72 warnings
+    Info: Peak virtual memory: 4731 megabytes
+    Info: Processing ended: Wed Oct 16 13:17:32 2024
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:02
+
+

@@ -1,0 +1,11 @@
+Library Ieee;
+Use ieee.std_logic_1164.all;
+Use ieee.std_logic_Unsigned.all;
+Entity Mano_Machine_Full is
+   Port(
+         St      :  inout   std_logic                      ;
+         clk     :  in      std_logic                      ;
+         Inuser  :  in      std_logic_vector( 7 downto 0 ) ;
+         Output  :  out     Std_logic_vector( 7 downto 0 ) 
+        );
+End Entity;

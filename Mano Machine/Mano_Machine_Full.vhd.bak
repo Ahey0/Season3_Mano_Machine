@@ -1,0 +1,54 @@
+Library Ieee;
+Use ieee.std_logic_1164.all;
+Use ieee.std_logic_Unsigned.all;
+Entity Mano_Machine_Full is
+   Port(
+         St      :  inout   std_logic                      ;
+         clk     :  in      std_logic                      ;
+         Inuser  :  in      std_logic_vector( 7 downto 0 ) ;
+         Output  :  out     Std_logic_vector( 7 downto 0 ) 
+        );
+End Entity;
+Architecture Mano_Machine_Full _Behave Of Mano_Machine_Full  is
+Component  Mano_Machine is
+   Port(
+         St      :  inout   std_logic                      ;
+         clk     :  in      std_logic                      ;
+         Inuser  :  in      std_logic_vector( 7 downto 0 ) ;
+         Output  :  out     Std_logic_vector( 7 downto 0 ) 
+        );
+End Component;
+Component Clock_controll_50MHZ_T_50HZ is 
+  port(
+        clkin   : in  std_logic     ;
+        EN      : in  std_logic     ;
+        reset   : in  std_logic     ;
+        clkout  : out std_logic     
+       );
+End Component;
+Component  CONVERTER is
+port(
+     INS    : in  std_logic_vector(15 downto 0)  ;
+	  datadig1 : out integer  range 0 to 9          ;
+	  datadig2 : out integer  range 0 to 9          ;
+	  datadig3 : out integer  range 0 to 9          ;
+	  datadig4 : out integer  range 0 to 9          ;
+	  datadig5 : out integer  range 0 to 9          
+	  );
+End Component;
+Component  Disp_CA is
+  Port(
+       datadig1 : in  integer  range 0 to 9          ;
+       datadig2 : in  integer  range 0 to 9          ;
+    	 datadig3 : in  integer  range 0 to 9          ;
+    	 datadig4 : in  integer  range 0 to 9          ;
+       datadig5 : in  integer  range 0 to 9          ;
+       Clk      : in  std_logic                      ;
+       dig1     : out std_logic_vector(6 downto 0)   ;
+       dig2     : out std_logic_vector(6 downto 0)   ;
+    	 dig3     : out std_logic_vector(6 downto 0)   ;
+       dig4     : out std_logic_vector(6 downto 0)   ;
+       dig5     : out std_logic_vector(6 downto 0)   
+       );  
+End Component;
+		 
